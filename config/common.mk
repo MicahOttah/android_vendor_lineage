@@ -30,8 +30,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 endif
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
-# Enable ADB authentication
+# Enable ADB authentication (v521 bring-up: skip when WITH_ADB_INSECURE=true, as in lineage-16.0)
+ifneq ($(WITH_ADB_INSECURE),true)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 endif
 
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
