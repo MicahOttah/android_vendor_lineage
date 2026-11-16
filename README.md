@@ -12,7 +12,7 @@ Pad X 8.0 (V521)** port to **LineageOS 15.1** (Android 8.1).
 
 | Commit | Subject |
 | --- | --- |
-| `56e571d` | v521: allow building with an insecure adb |
+| `530bd69` | v521: allow building with an insecure adb |
 
 `ro.adb.secure=1` makes the adb daemon ask for the authorisation of every
 host that connects to it.  While the device is being brought up that means
